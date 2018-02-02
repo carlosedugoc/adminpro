@@ -1,15 +1,15 @@
-<h3>Leyenda</h3>
+<h3>{{leyenda}}</h3>
 <div class="input-group">
   <span class="input-group-btn">
-            <button type="button" class="btn btn-secondary" (click)="cambiarValor(+5)">
-              <i class="mdi mdi-plus"></i>
+            <button type="button" class="btn btn-secondary" (click)="cambiarValor(-5)">
+              <i class="mdi mdi-minus"></i>
             </button>
           </span>
   <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"
     [(ngModel)]="progreso">
   <span class="input-group-btn">
-            <button type="button" class="btn btn-secondary" (click)="cambiarValor(-5)">
-              <i class="mdi mdi-minus"></i>
+            <button type="button" class="btn btn-secondary" (click)="cambiarValor(+5)">
+              <i class="mdi mdi-plus"></i>
             </button>
           </span>
 </div>

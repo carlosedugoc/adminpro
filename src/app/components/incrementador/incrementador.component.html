@@ -5,8 +5,8 @@
               <i class="mdi mdi-minus"></i>
             </button>
           </span>
-  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"
-    [(ngModel)]="progreso">
+  <input #txtProgreso type="number" min="1" max="100" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"
+    [(ngModel)]="progreso" (ngModelChange)="onChanges($event)" >
   <span class="input-group-btn">
             <button type="button" class="btn btn-secondary" (click)="cambiarValor(+5)">
               <i class="mdi mdi-plus"></i>

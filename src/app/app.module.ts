@@ -12,7 +12,8 @@ import { RegisterComponent } from './login/register.component';
 //Módulos
 import { PagesModule } from "./pages/pages.module";
 import { FormsModule } from "@angular/forms";
-import { SettingsService } from './servives/settings.service';
+import { SettingsService } from './services/service.index';
+import { ServiceModule } from './services/service.module';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import { SettingsService } from './servives/settings.service';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
-  providers: [SettingsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

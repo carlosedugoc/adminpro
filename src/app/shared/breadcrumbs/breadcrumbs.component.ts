@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivationEnd } from '@angular/router';
+import { Title, Meta, MetaDefinition } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-breadcrumbs',
@@ -9,12 +10,20 @@ import { ActivationEnd } from '@angular/router';
 })
 export class BreadcrumbsComponent implements OnInit {
   label: string = ''
-  constructor(private router: Router) {
+  constructor(private router: Router, 
+              public title: Title, 
+              public tag: Meta) {
 
-    this.getDataRoute().subscribe(data => {
-
+    this.getDataRoute()
+      .subscribe(data => {
       console.log(data)
-
+      this.label = data.titulo
+      this.title.setTitle = data.label
+      let metaTag: MetaDefinition = {
+        name: 'description',
+        content: this.label
+      }
+      this.tag.updateTag(metaTag)
     })
   }
 

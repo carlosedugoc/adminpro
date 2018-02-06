@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { setInterval } from 'timers';
 
 @Component({
   selector: 'app-promesas',

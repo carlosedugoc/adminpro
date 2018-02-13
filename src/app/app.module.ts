@@ -11,7 +11,7 @@ import { RegisterComponent } from './login/register.component';
 
 //Módulos
 import { PagesModule } from "./pages/pages.module";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SettingsService } from './services/service.index';
 import { ServiceModule } from './services/service.module';
 
@@ -26,7 +26,8 @@ import { ServiceModule } from './services/service.module';
     APP_ROUTES,
     PagesModule,
     FormsModule,
-    ServiceModule
+    ServiceModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

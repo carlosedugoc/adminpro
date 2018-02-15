@@ -15,31 +15,37 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 
+import { PipesModule } from "../pipes/pipes.module";
+import { ProfileComponent } from './profile/profile.component';
+import { CommonModule } from "@angular/common";
+
 
 @NgModule({
-  declarations: [
-      PagesComponent,
-      DashboardComponent, 
-      ProgressComponent, 
-      Graficas1Component,
-      IncrementadorComponent,
-      GraficoDonaComponent,
-      AccountSettingsComponent,
-      PromesasComponent,
-      RxjsComponent
-  ],
-  exports: [
-      DashboardComponent,
-      ProgressComponent,
-      Graficas1Component,
-      IncrementadorComponent
-  ],
-  imports: [
-      SharedModule,
-      PAGES_ROUTES,
-      FormsModule,
-      ChartsModule,
-      BrowserModule
-  ]
+    declarations: [
+        PagesComponent,
+        DashboardComponent,
+        ProgressComponent,
+        Graficas1Component,
+        IncrementadorComponent,
+        GraficoDonaComponent,
+        AccountSettingsComponent,
+        PromesasComponent,
+        RxjsComponent,
+        ProfileComponent
+    ],
+    exports: [
+        DashboardComponent,
+        ProgressComponent,
+        Graficas1Component,
+        IncrementadorComponent
+    ],
+    imports: [
+        SharedModule,
+        PAGES_ROUTES,
+        FormsModule,
+        ChartsModule,
+        BrowserModule, 
+        CommonModule
+    ]
 })
-export class PagesModule {}
+export class PagesModule { }

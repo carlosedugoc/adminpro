@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
-import { EDESTADDRREQ } from 'constants';
 
 @Injectable()
 export class UsuarioService {
@@ -54,8 +53,10 @@ export class UsuarioService {
     url += '?token=' + this.token
     return this.http.put(url, usuario)
       .map((resp: any) => {
-        let usuarioDB: Usuario
-        this.guardarStorage(usuarioDB._id, this.token, usuarioDB)
+        if(usuario._id === this.usuario._id){
+          let usuarioDB: Usuario = resp.usuario
+          this.guardarStorage(usuarioDB._id, this.token, usuarioDB)
+        }
         swal('Usuario actualizado', usuario.nombre, 'success')
         return true
       })
@@ -112,4 +113,13 @@ export class UsuarioService {
     return this.http.get(url).map((resp: any) => resp.usuarios)
   }
 
+  borrarUsuarios(id: string) {
+    let url = URL_SERVICIOS + '/usuario/' + id
+    url += '?token=' + this.token
+
+    return this.http.delete(url).map(resp=>{
+      swal('Usuario borrado','El usuario fue borrado correctamente', 'success')
+      return true
+    })
+  }
 }

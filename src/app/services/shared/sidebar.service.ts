@@ -14,6 +14,15 @@ menu:any = [
       {titulo: 'Rxjs', url:'/rxjs'}
     ]
 
+  },
+  {
+    titulo : 'Mantenimientos',
+    icono : 'mdi-folder-open',
+    submenu:[
+      {titulo: 'Usuarios', url:'/usuarios'},
+      {titulo: 'Hospitales', url:'/hospitales'},
+      {titulo: 'Médicos', url:'/medicos'}
+    ]
   }
 ]
   constructor() { }

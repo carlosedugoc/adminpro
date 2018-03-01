@@ -8,7 +8,8 @@ import {
   LoginGuardGuard,
   SubirArchivoService,
   ModalUploadService,
-  HospitalService
+  HospitalService,
+  MedicoService
 } from "./service.index";
 import { HttpClientModule } from '@angular/common/http';
 
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginGuardGuard,
     SubirArchivoService,
     ModalUploadService,
-    HospitalService
+    HospitalService,
+    MedicoService
   ]
 })
 export class ServiceModule { }
